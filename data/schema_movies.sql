@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS films;
+DROP TABLE IF EXISTS movies;
+
+CREATE TABLE movies (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	title TEXT NOT NULL,
+	year INTEGER,
+	genres TEXT,
+	href TEXT,
+	extract TEXT,
+	cover TEXT
+);

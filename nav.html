@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top shadow-lg">
+	<div class="container-fluid">
+		<ul class="navbar-nav">
+			{% for item in [('index.index', 'index'), ('movies.movies', 'movies'), ('infos.infos', 'infos')] %}
+				<li class="nav-item">
+					<a class="nav-link {{ 'active' if item[1]==metadata.pagename else '' }}" href="{{ url_for(item[0]) }}">{{ item[1]|upper }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+			{% if "logged" in session %}
+				<a href="{{ url_for('auth.logout') }}" class="btn btn-dark"><span class="badge rounded-pill text-bg-info">{{ session["username"] }}</span> Logout</a>
+			{% else %}
+				<a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login</a>
+			{% endif %}
+		
+	</div>
+</nav>
