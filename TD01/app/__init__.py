@@ -15,8 +15,26 @@ def create_app():
     # La configuration de la clé secrète pour la session est obligatoire pour Flask, on la définit ici
     app.config['SECRET_KEY'] = 'ma cle secrete unique'  # Remplacez par une clé secrète aléatoire et sécurisée
 
-    from app.blueprints import index_bp, infos_bp
+    from app.blueprints import index_bp, infos_bp, movies_bp, users_bp
+    
+    app.register_blueprint(users_bp)
     app.register_blueprint(index_bp)
     app.register_blueprint(infos_bp, url_prefix="/infos")
+    app.register_blueprint(movies_bp)
+
+    @app.before_request
+    def require_login():
+        from flask import request, session, redirect, url_for
+
+        allowed_endpoints = {
+            "index.index",
+            "infos.infos",
+            "users.login",
+            "users.signin",
+            "static",
+        }
+
+        if request.endpoint not in allowed_endpoints and "logged" not in session:
+            return redirect(url_for("users.login"))
 
     return app

@@ -11,6 +11,9 @@ connection = sqlite3.connect('app/movies.db')
 with open('app/static/data/schema_movies.sql') as f:
     connection.executescript(f.read())
 
+with open('app/static/data/schema_users.sql') as f:
+    connection.executescript(f.read())
+
 cur = connection.cursor()
 
 for m in movies:
@@ -20,5 +23,3 @@ for m in movies:
 
 connection.commit()
 connection.close()
-
-

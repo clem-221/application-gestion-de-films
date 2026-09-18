@@ -1,0 +1,5 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Bienvenue, {{ session['username'] }}</h1>
+<a href="{{ url_for('users.logout') }}" class="btn btn-danger">Se déconnecter</a>
+{% endblock %}

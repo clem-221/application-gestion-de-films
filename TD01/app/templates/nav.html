@@ -8,10 +8,9 @@
 			{% endfor %}
 		</ul>
 			{% if "logged" in session %}
-				<a href="{{ url_for('auth.logout') }}" class="btn btn-dark"><span class="badge rounded-pill text-bg-info">{{ session["username"] }}</span> Logout</a>
+				<a href="{{ url_for('users.logout') }}" class="btn btn-dark"><span class="badge rounded-pill text-bg-info">{{ session["username"] }}</span> Logout</a>
 			{% else %}
-				<a href="{{ url_for('auth.login') }}" class="btn btn-primary">Login</a>
+				<a href="{{ url_for('users.login') }}" class="btn btn-primary">Login</a>
 			{% endif %}
-		
 	</div>
 </nav>
