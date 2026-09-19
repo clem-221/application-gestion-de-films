@@ -126,4 +126,4 @@ Ce travail pratique a été l'occasion de mettre en œuvre plusieurs notions cl�
 
 Clément SENE — Étudiant BUT 3 Informatique, IUT de Villetaneuse (Université Sorbonne Paris Nord)
 
-**Cours créé par** : Gaël Guibon - Professeur Programmation Avancée Python
+**Cours créé par** : Gaël Guibon - Professeur Programmation Avancée Python, IUT de Villetaneuse (Université Sorbonne Paris Nord)
