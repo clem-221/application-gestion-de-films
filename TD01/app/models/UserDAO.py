@@ -27,12 +27,12 @@ class UserDAO(UserDAOInterface):
         conn.close()
         return dict(row) if row else None
 
-    def create_user(self, username, hashed_password):
+    def create_user(self, username, firstname, lastname, student_Id,hashed_password):
         conn = self._get_connection()
         cursor = conn.cursor()
         cursor.execute(
-            "INSERT INTO users (username, password) VALUES (?, ?)",
-            (username, hashed_password),
+            "INSERT INTO users (firstname, lastname, username, password,student_Id) VALUES (?, ?, ?, ?, ?)",
+            (firstname, lastname, username, hashed_password, student_Id),
         )
         conn.commit()
         new_id = cursor.lastrowid

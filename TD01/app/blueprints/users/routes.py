@@ -28,12 +28,14 @@ def signin():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
-        success, error = user_service.register(username, password)
+        firstname = request.form["firstname"]
+        lastname = request.form["lastname"]
+        student_id = request.form["student_id"]
+        success, error = user_service.register(username, password, firstname, lastname, student_id)
         if success:
             return redirect(url_for("users.login"))
         flash(error)
-    return render_template("signin.html", metadata={"title": "Signin", "pagename": "signin"})
-
+    return render_template("signin.html", metadata={"title": "Inscription", "pagename": "signin"})
 
 @users_bp.route("/logout")
 def logout():

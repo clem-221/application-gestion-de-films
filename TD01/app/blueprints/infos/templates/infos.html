@@ -6,8 +6,17 @@
         <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100">
             <use xlink:href="#bootstrap"></use>
         </svg>
-        <h1 class="text-body-emphasis">{{data["firstname"] | capitalize}} {{data["lastname"] | upper}}</h1>
-        <p class="col-lg-8 mx-auto fs-5 text-muted"> {{data["studentId"]}}</p>
+
+        {% if data %}
+            <h1 class="text-body-emphasis">{{ data["firstname"] | capitalize }} {{ data["lastname"] | upper }}</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">{{ data["student_id"] }}</p>
+        {% else %}
+            <h1 class="text-body-emphasis">Bienvenue</h1>
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                Connectez-vous pour voir vos informations.
+                <a href="{{ url_for('users.login') }}">Se connecter</a>
+            </p>
+        {% endif %}
     </div>
 
 {% endblock %}

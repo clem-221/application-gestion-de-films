@@ -7,12 +7,12 @@ class UserServices:
     def __init__(self, user_dao: UserDAO):
         self.user_dao = user_dao
 
-    def register(self, username, password):
+    def register(self, username, password, firstname, lastname, student_id):
         if self.user_dao.get_user_by_username(username):
             return False, "Ce nom d'utilisateur est déjà pris."
 
         hashed = generate_password_hash(password)
-        self.user_dao.create_user(username, hashed)
+        self.user_dao.create_user(username, firstname, lastname, student_id, hashed)
         return True, None
 
     def authenticate(self, username, password):

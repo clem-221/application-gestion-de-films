@@ -1,0 +1,59 @@
+.header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .badge {
+        background-color: #28a745;
+        color: white;
+        padding: 6px 14px;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+
+    .movie-card {
+        display: flex;
+        background: white;
+        border-radius: 6px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+        overflow: hidden;
+    }
+
+    .movie-card img {
+        width: 130px;
+        height: 190px;
+        object-fit: cover;
+        flex-shrink: 0;
+        background-color: #ddd;
+    }
+
+    .movie-info {
+        padding: 15px 20px;
+        flex: 1;
+    }
+
+    .movie-info h2 {
+        margin: 0 0 10px 0;
+    }
+
+    .movie-info p {
+        margin: 4px 0;
+        color: #555;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
